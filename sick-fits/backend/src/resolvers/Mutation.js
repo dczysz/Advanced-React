@@ -1,3 +1,21 @@
-const mutations = {};
+const Mutations = {
+  async createItem(parent, args, ctx, info) {
+    //TODO: check if logged in
 
-module.exports = mutations;
+    //* ctx.db.[query|mutation] grants access to methods in prisma.graphql
+    const item = await ctx.db.mutation.createItem(
+      {
+        data: {
+          ...args,
+        },
+      },
+      info
+    );
+
+    console.log(item);
+
+    return item;
+  },
+};
+
+module.exports = Mutations;
