@@ -1,3 +1,6 @@
+// Actual mutation definitions
+// This is where logic like charging credit card would happen
+
 const Mutations = {
   async createItem(parent, args, ctx, info) {
     //TODO: check if logged in
